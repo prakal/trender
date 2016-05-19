@@ -10,6 +10,10 @@ repositories {
     mavenCentral()
 }
 
+task stage {
+    dependsOn build
+}
+
 dependencies {
 
     compile("org.springframework.boot:spring-boot-starter-web:1.3.5.RELEASE")
