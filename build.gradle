@@ -14,6 +14,12 @@ task stage {
     dependsOn build
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.swarm.MainApp'
+    }
+}
+
 dependencies {
 
     compile("org.springframework.boot:spring-boot-starter-web:1.3.5.RELEASE")
