@@ -5,9 +5,7 @@
 *.iml
 *.ipr
 *.iws
-<<<<<<< HEAD
 /Server/out
-=======
 
 # Xcode
 #
@@ -63,4 +61,3 @@ Packages/
 Carthage/Build
 
 
->>>>>>> 71bbbaf717728763a42b19221516dfd1a48c1bf7
