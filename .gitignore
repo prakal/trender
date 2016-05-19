@@ -2,3 +2,6 @@
 .gradle
 /Server/build
 /Server/gradle
+*.iml
+*.ipr
+*.iws
