@@ -1,8 +1,11 @@
 package com.swarm;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 
 
+@Component
 public class UserCollection {
     HashMap<String, User> users = new HashMap<String, User>();
 
