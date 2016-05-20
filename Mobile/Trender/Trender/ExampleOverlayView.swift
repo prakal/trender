@@ -16,7 +16,7 @@ class ExampleOverlayView: OverlayView {
     @IBOutlet lazy var overlayImageView: UIImageView! = {
         [unowned self] in
         
-        var imageView = UIImageView(frame: self.bounds)
+        var imageView = UIImageView(frame: self.frame)
         self.addSubview(imageView)
         
         return imageView

@@ -7,16 +7,60 @@
 //
 
 import UIKit
+import PinterestSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    func uicolorFromHex(rgbValue:UInt32)->UIColor{
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        
+        return UIColor(red:red, green:green, blue:blue, alpha:1.0)
+    }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+         return PDKClient.sharedInstance().handleCallbackURL(url)
+    }
+    
+    func setUpStyle() {
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = uicolorFromHex(0xffffff)
+        navigationBarAppearace.barTintColor = uicolorFromHex(0x002A5F)
+        
+        // change navigation item title color
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        for name in UIFont.familyNames() {
+            print(name)
+            if let nameString = name as? String
+            {
+                print(UIFont.fontNamesForFamilyName(nameString))
+            }
+        }
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setUpStyle()
+        PDKClient.configureSharedInstanceWithAppId("4835417911480821930")
+
+        if(PDKClient.sharedInstance().authorized == false) {
+                let permissions = [PDKClientReadPublicPermissions]
+            PDKClient.sharedInstance().authenticateWithPermissions(permissions, withSuccess: { (response) -> Void in
+                NSNotificationCenter.defaultCenter().postNotificationName("refreshDesigns", object: self)
+            }, andFailure:{ (error) in
+                print(error)
+            })
+        }
         return true
+        
+    }
+    
+    func registerNotification() {
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

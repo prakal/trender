@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		090D8F411CEE5C8C00FD237D /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090D8F401CEE5C8C00FD237D /* OverlayView.xib */; };
 		090D8F431CEE5D3100FD237D /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D8F421CEE5D3100FD237D /* ExampleOverlayView.swift */; };
+		090D8F461CEE6FDF00FD237D /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 090D8F451CEE6FDF00FD237D /* test.m */; };
+		092FAD391CEEE0DF00E6CAAC /* SpireAlt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 092FAD381CEEE0DF00E6CAAC /* SpireAlt.ttf */; };
 		094370B71CEE489E00FF87E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094370B61CEE489E00FF87E3 /* AppDelegate.swift */; };
 		094370B91CEE489E00FF87E3 /* CardSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094370B81CEE489E00FF87E3 /* CardSelectViewController.swift */; };
 		094370BC1CEE489E00FF87E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094370BA1CEE489E00FF87E3 /* Main.storyboard */; };
@@ -17,6 +19,14 @@
 		094370CC1CEE489E00FF87E3 /* TrenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094370CB1CEE489E00FF87E3 /* TrenderTests.swift */; };
 		094370D71CEE489E00FF87E3 /* TrenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094370D61CEE489E00FF87E3 /* TrenderUITests.swift */; };
 		921552BF4EEBA333F9EA7D65 /* Pods_Trender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3C2295A1A32E05C3B03262 /* Pods_Trender.framework */; };
+		9761B1B06ABF1A04AAC1A39D /* DesignCreateContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761BDBDF059C25170DDD2E7 /* DesignCreateContext.swift */; };
+		9761B1C91FC0127552B50645 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761BEEA6F865DCF3FD36B9C /* Utilities.swift */; };
+		9761B4B777C839091FA84F94 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761BA480C866D4C9C29251F /* Design.swift */; };
+		9761B4D7A2D33566A4C6BCB5 /* DesignSearchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761BA6810C5BCCA839030CE /* DesignSearchContext.swift */; };
+		9761B78938238306E5762558 /* TrenderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761BD26D0D6D654218C77E3 /* TrenderService.swift */; };
+		9761B7FC749500C1845F9603 /* DesignRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761BDE0D19E32D650E0668D /* DesignRouter.swift */; };
+		9761BD45B16249BD04FC0B6D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761B89ECE954BF069036DD5 /* Constants.swift */; };
+		9761BE9EBBFFB1A9E7B56FB0 /* PinterestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9761B0DF69608FC0AEEA57AF /* PinterestService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +49,9 @@
 /* Begin PBXFileReference section */
 		090D8F401CEE5C8C00FD237D /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		090D8F421CEE5D3100FD237D /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
+		090D8F441CEE6FDF00FD237D /* Trender-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trender-Bridging-Header.h"; sourceTree = "<group>"; };
+		090D8F451CEE6FDF00FD237D /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
+		092FAD381CEEE0DF00E6CAAC /* SpireAlt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpireAlt.ttf; sourceTree = "<group>"; };
 		094370B31CEE489E00FF87E3 /* Trender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094370B61CEE489E00FF87E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		094370B81CEE489E00FF87E3 /* CardSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +67,14 @@
 		094370D81CEE489E00FF87E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F3C2295A1A32E05C3B03262 /* Pods_Trender.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trender.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5008C568D4C110AE604D0351 /* Pods-Trender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trender.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trender/Pods-Trender.debug.xcconfig"; sourceTree = "<group>"; };
+		9761B0DF69608FC0AEEA57AF /* PinterestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestService.swift; sourceTree = "<group>"; };
+		9761B89ECE954BF069036DD5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9761BA480C866D4C9C29251F /* Design.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		9761BA6810C5BCCA839030CE /* DesignSearchContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignSearchContext.swift; sourceTree = "<group>"; };
+		9761BD26D0D6D654218C77E3 /* TrenderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrenderService.swift; sourceTree = "<group>"; };
+		9761BDBDF059C25170DDD2E7 /* DesignCreateContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignCreateContext.swift; sourceTree = "<group>"; };
+		9761BDE0D19E32D650E0668D /* DesignRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignRouter.swift; sourceTree = "<group>"; };
+		9761BEEA6F865DCF3FD36B9C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9B92FAE246A97971D9B81C90 /* Pods-Trender.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trender.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trender/Pods-Trender.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,9 +134,17 @@
 				090D8F421CEE5D3100FD237D /* ExampleOverlayView.swift */,
 				094370BA1CEE489E00FF87E3 /* Main.storyboard */,
 				094370BD1CEE489E00FF87E3 /* Assets.xcassets */,
+				092FAD381CEEE0DF00E6CAAC /* SpireAlt.ttf */,
 				094370BF1CEE489E00FF87E3 /* LaunchScreen.storyboard */,
 				090D8F401CEE5C8C00FD237D /* OverlayView.xib */,
 				094370C21CEE489E00FF87E3 /* Info.plist */,
+				9761B9ADF60164D551569D44 /* Models */,
+				9761B745BAB5540E1A605846 /* Services */,
+				9761B26415A06C3A45C24EC1 /* ViewModels */,
+				9761B7A2EB48BC9655B8118F /* Network-component */,
+				9761BEBFA546C751E72CE55B /* shared */,
+				090D8F451CEE6FDF00FD237D /* test.m */,
+				090D8F441CEE6FDF00FD237D /* Trender-Bridging-Header.h */,
 			);
 			path = Trender;
 			sourceTree = "<group>";
@@ -153,6 +182,49 @@
 				9B92FAE246A97971D9B81C90 /* Pods-Trender.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9761B26415A06C3A45C24EC1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9761B745BAB5540E1A605846 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9761BD26D0D6D654218C77E3 /* TrenderService.swift */,
+				9761B0DF69608FC0AEEA57AF /* PinterestService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9761B7A2EB48BC9655B8118F /* Network-component */ = {
+			isa = PBXGroup;
+			children = (
+				9761BDE0D19E32D650E0668D /* DesignRouter.swift */,
+				9761BA6810C5BCCA839030CE /* DesignSearchContext.swift */,
+				9761BDBDF059C25170DDD2E7 /* DesignCreateContext.swift */,
+			);
+			path = "Network-component";
+			sourceTree = "<group>";
+		};
+		9761B9ADF60164D551569D44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9761BA480C866D4C9C29251F /* Design.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9761BEBFA546C751E72CE55B /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				9761B89ECE954BF069036DD5 /* Constants.swift */,
+				9761BEEA6F865DCF3FD36B9C /* Utilities.swift */,
+			);
+			path = shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				094370C11CEE489E00FF87E3 /* LaunchScreen.storyboard in Resources */,
+				092FAD391CEEE0DF00E6CAAC /* SpireAlt.ttf in Resources */,
 				090D8F411CEE5C8C00FD237D /* OverlayView.xib in Resources */,
 				094370BE1CEE489E00FF87E3 /* Assets.xcassets in Resources */,
 				094370BC1CEE489E00FF87E3 /* Main.storyboard in Resources */,
@@ -341,6 +414,15 @@
 				094370B91CEE489E00FF87E3 /* CardSelectViewController.swift in Sources */,
 				094370B71CEE489E00FF87E3 /* AppDelegate.swift in Sources */,
 				090D8F431CEE5D3100FD237D /* ExampleOverlayView.swift in Sources */,
+				9761B4B777C839091FA84F94 /* Design.swift in Sources */,
+				9761B78938238306E5762558 /* TrenderService.swift in Sources */,
+				090D8F461CEE6FDF00FD237D /* test.m in Sources */,
+				9761B7FC749500C1845F9603 /* DesignRouter.swift in Sources */,
+				9761BD45B16249BD04FC0B6D /* Constants.swift in Sources */,
+				9761B4D7A2D33566A4C6BCB5 /* DesignSearchContext.swift in Sources */,
+				9761B1B06ABF1A04AAC1A39D /* DesignCreateContext.swift in Sources */,
+				9761BE9EBBFFB1A9E7B56FB0 /* PinterestService.swift in Sources */,
+				9761B1C91FC0127552B50645 /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,10 +565,14 @@
 			baseConfigurationReference = 5008C568D4C110AE604D0351 /* Pods-Trender.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Trender/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.drewbar.Trender.Trender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trender/Trender-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;
 		};
@@ -495,10 +581,13 @@
 			baseConfigurationReference = 9B92FAE246A97971D9B81C90 /* Pods-Trender.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Trender/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.drewbar.Trender.Trender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trender/Trender-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Release;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L3W-Tm-esQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AbO-nL-IJt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="823" y="169"/>
         </scene>
-        <!--Item 1-->
+        <!--Spring 2016-->
         <scene sceneID="KcV-HP-lKG">
             <objects>
                 <viewController storyboardIdentifier="CardSelectViewController" id="rNO-gc-DOy" customClass="CardSelectViewController" customModule="Trender" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,26 +37,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ez-PE-eMB" userLabel="CardView" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="25" y="89" width="550" height="411"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cp0-oW-hfN">
+                                <rect key="frame" x="180" y="515" width="240" height="85"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwK-3m-GIr">
+                                        <rect key="frame" x="34" y="27" width="86" height="32"/>
+                                        <state key="normal" title="Button" image="btn_skip_normal"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWk-3M-167">
+                                        <rect key="frame" x="146" y="27" width="86" height="32"/>
+                                        <state key="normal" title="Button" image="btn_like_normal"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="MwK-3m-GIr" firstAttribute="leading" secondItem="Cp0-oW-hfN" secondAttribute="leading" constant="20" id="2TA-Fg-PlM"/>
+                                    <constraint firstAttribute="trailing" secondItem="mWk-3M-167" secondAttribute="trailing" constant="32" id="2yA-lL-9FI"/>
+                                    <constraint firstItem="MwK-3m-GIr" firstAttribute="centerY" secondItem="Cp0-oW-hfN" secondAttribute="centerY" id="SdO-dd-Wxe"/>
+                                    <constraint firstAttribute="height" constant="85" id="YdD-nN-ujm"/>
+                                    <constraint firstAttribute="width" constant="240" id="dcr-Gx-jqu"/>
+                                    <constraint firstItem="mWk-3M-167" firstAttribute="centerY" secondItem="Cp0-oW-hfN" secondAttribute="centerY" id="q83-dl-2ce"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9ez-PE-eMB" secondAttribute="trailing" id="F4U-Xo-wwL"/>
-                            <constraint firstItem="9ez-PE-eMB" firstAttribute="top" secondItem="TLb-Yc-oeN" secondAttribute="bottom" id="GpO-HW-S5k"/>
-                            <constraint firstItem="9ez-PE-eMB" firstAttribute="leading" secondItem="wDJ-Va-Zr6" secondAttribute="leading" id="bk9-UE-RZs"/>
-                            <constraint firstItem="qnz-DF-fhr" firstAttribute="top" secondItem="9ez-PE-eMB" secondAttribute="bottom" id="deP-tf-34C"/>
+                            <constraint firstAttribute="trailing" secondItem="9ez-PE-eMB" secondAttribute="trailing" constant="25" id="F4U-Xo-wwL"/>
+                            <constraint firstItem="qnz-DF-fhr" firstAttribute="top" secondItem="Cp0-oW-hfN" secondAttribute="bottom" id="Gfd-bE-7Lk"/>
+                            <constraint firstItem="9ez-PE-eMB" firstAttribute="top" secondItem="TLb-Yc-oeN" secondAttribute="bottom" constant="25" id="GpO-HW-S5k"/>
+                            <constraint firstItem="Cp0-oW-hfN" firstAttribute="centerX" secondItem="wDJ-Va-Zr6" secondAttribute="centerX" id="XBF-Xe-VBf"/>
+                            <constraint firstItem="9ez-PE-eMB" firstAttribute="leading" secondItem="wDJ-Va-Zr6" secondAttribute="leading" constant="25" id="bk9-UE-RZs"/>
+                            <constraint firstItem="qnz-DF-fhr" firstAttribute="top" secondItem="9ez-PE-eMB" secondAttribute="bottom" constant="100" id="deP-tf-34C"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="6g8-aE-8H3"/>
+                    <navigationItem key="navigationItem" title="Spring 2016" id="a6H-L7-Ehw">
+                        <barButtonItem key="leftBarButtonItem" image="menuButton" id="cIa-Qb-Xpx"/>
+                        <barButtonItem key="rightBarButtonItem" image="trendingIcon" id="Sfz-PJ-uMH"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="kolodaView" destination="9ez-PE-eMB" id="Sow-5I-aeW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRY-xe-Ej3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="-491"/>
+            <point key="canvasLocation" x="1662" y="-572"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yLz-oR-ETA">
@@ -68,7 +95,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rNO-gc-DOy" kind="relationship" relationship="viewControllers" id="Dhz-rb-xWX"/>
                         <segue destination="yhk-M8-9KO" kind="relationship" relationship="viewControllers" id="m8r-Rw-3K1"/>
                     </connections>
                 </tabBarController>
@@ -76,5 +102,30 @@
             </objects>
             <point key="canvasLocation" x="3" y="-161"/>
         </scene>
+        <!--Item 1-->
+        <scene sceneID="4L5-4k-25P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AbO-nL-IJt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="6g8-aE-8H3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jeJ-E8-9fp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rNO-gc-DOy" kind="relationship" relationship="rootViewController" id="GpJ-Mv-NAc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vX-ie-oUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="-572"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="btn_like_normal" width="32" height="32"/>
+        <image name="btn_skip_normal" width="32" height="32"/>
+        <image name="menuButton" width="26" height="20"/>
+        <image name="trendingIcon" width="22" height="30"/>
+    </resources>
 </document>
