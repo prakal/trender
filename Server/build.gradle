@@ -33,6 +33,8 @@ jar {
 dependencies {
 
     compile("org.springframework.boot:spring-boot-starter-web:1.3.5.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+    compile("org.springframework:spring-messaging")
     compile("org.projectlombok:lombok:1.16.8")
     provided group: 'org.projectlombok', name: 'lombok', version:'1.16.8'
 
