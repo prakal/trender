@@ -1,7 +1,5 @@
 package com.swarm;
 
-
-
 public class Design {
     String designId;
     Boolean isLike;
