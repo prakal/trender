@@ -1,7 +1,7 @@
 .idea
 .gradle
-/Server/build
-/Server/gradle
+/build
+/gradle
 *.iml
 *.ipr
 *.iws
