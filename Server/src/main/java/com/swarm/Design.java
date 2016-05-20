@@ -2,10 +2,18 @@ package com.swarm;
 
 public class Design {
     String designId;
-    Boolean isLike;
+    int likeWeight = 0;
+    int dislikeWeight = 0;
 
     public Design(String designId, Boolean isLike) {
         this.designId = designId;
-        this.isLike = isLike;
+        if (isLike)
+        {
+            likeWeight += 1;
+        }
+        else
+        {
+            dislikeWeight += 1;
+        }
     }
 }

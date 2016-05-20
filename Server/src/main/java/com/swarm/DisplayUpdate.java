@@ -13,4 +13,6 @@ public class DisplayUpdate {
     private String swarmId;
     private String designId;
     private String command;
+
+
 }

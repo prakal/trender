@@ -11,7 +11,7 @@ public class UserCollection {
 
     void addUser(String userId, String designId, Boolean isLike)
     {
-        if (users.keySet().contains(userId))
+        if (users.containsKey(userId))
         {
             users.get(userId).addDesign(designId, isLike);
         }

@@ -16,16 +16,21 @@ public class Controller {
     @Autowired
     private SwarmManager swarmManager;
 
+    @Autowired
+    private WebSocket webSocket;
+
     @RequestMapping(value = "/postDesign",method = RequestMethod.POST)
-    public ResponseEntity postDesign(@RequestBody Data dataBody)
-    {
-        Data data = new Data();
+    public ResponseEntity postDesign(@RequestBody Data data)  {
         userCollection.addUser(data.userId, data.designId, data.isLike);
         swarmManager.add(userCollection.getUser(data.userId), data.designId, data.isLike);
-        /*
-        Swarm -> designs
-        users -> designs ->
-         */
+
+        try
+        {
+            webSocket.send(swarmManager.getRandomUnusedSwarmId(), data.designId, "add");
+        }
+        catch(Exception e){
+
+        }
 
         return ResponseEntity.ok().build();
     }
