@@ -1,6 +1,4 @@
-package com.swarm; /**
- * Created by igorsorokin on 5/19/16.
- */
+package com.swarm;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.context.annotation.ComponentScan;
