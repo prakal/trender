@@ -1,7 +1,29 @@
    var graph;
-   var json = {"nodes":[{"name":"one","group":1},{"name":"two","group":1},{"name":"three","group":1},{"name":"four","group":1},{"name":"five","group":1},{"name":"six","group":1},{"name":"seven","group":1},{"name":"eight","group":1},{"name":"nine","group":1},{"name":"ten","group":1},{"name":"eleven","group":2},{"name":"twelve","group":2},{"name":"thirteen","group":3},{"name":"fourteen","group":2},{"name":"fifteen","group":2},{"name":"sixteen","group":2},{"name":"seventeen","group":3},{"name":"eighteen","group":3},{"name":"nineteen","group":3},{"name":"twenty","group":3},{"name":"twenty-one","group":3},{"name":"twenty-two","group":3},{"name":"twenty-three","group":3},{"name":"twenty-four","group":3},{"name":"twenty-five","group":4}],
-                "links":[{"source":1,"target":0,"value":2},{"source":2,"target":0,"value":12},{"source":3,"target":0,"value":12},{"source":3,"target":12,"value":12},{"source":4,"target":0,"value":12},{"source":5,"target":0,"value":12},{"source":6,"target":0,"value":12},{"source":7,"target":0,"value":12},{"source":8,"target":0,"value":12},{"source":6,"target":12,"value":4},{"source":24,"target":0,"value":2},{"source":19,"target":16,"value":10},{"source":23,"target":19,"value":1},{"source":17,"target":3,"value":1}]};
+   var json = {"nodes":[{"name":"zero","group":1},{"name":"one","group":1},{"name":"two","group":1},{"name":"three","group":1},{"name":"four","group":1},{"name":"five","group":1},{"name":"six","group":1},{"name":"seven","group":1},{"name":"eight","group":1},{"name":"nine","group":1},{"name":"ten","group":1},{"name":"eleven","group":2},{"name":"twelve","group":2},{"name":"thirteen","group":3},{"name":"fourteen","group":2},{"name":"fifteen","group":2},{"name":"sixteen","group":2},{"name":"seventeen","group":3},{"name":"eighteen","group":3},{"name":"nineteen","group":3},{"name":"twenty","group":3},{"name":"twenty-one","group":3},{"name":"twenty-two","group":3},{"name":"twenty-three","group":3},{"name":"twenty-four","group":3},{"name":"twenty-five","group":4}],
+                // "links":[{"source":1,"target":0,"value":3},{"source":2,"target":0,"value":3},{"source":3,"target":0,"value":3},{"source":3,"target":10,"value":3},{"source":4,"target":0,"value":3},{"source":5,"target":0,"value":3},{"source":6,"target":0,"value":3},{"source":7,"target":0,"value":3},{"source":8,"target":0,"value":3},{"source":6,"target":10,"value":3},{"source":24,"target":0,"value":3},{"source":19,"target":16,"value":3},{"source":23,"target":19,"value":3},{"source":17,"target":3,"value":3}]};
+                "links":[]};
+    var swarmList = [
+        [1,2,3,4],
+        [1,7,8,9],
+        [10,11,12,13],
+        [11,1,14,15]
+    ];
 
+    function resetJSONLinks(){
+        // takes swarmList and sets the links property in JSON to reflect swarmList
+        json.links = [];
+        swarmList.forEach(function(item){
+            item.forEach(function(element){
+                item.forEach(function(innerElement){
+                    if (element !== innerElement){
+                        json.links.push({'source':element, "target":innerElement, "value":5});
+                    }
+                })
+            });
+        });
+    };
+
+    resetJSONLinks();
 
     function myGraph() {
         this.addInitialNodesAndLinks = function(data){
@@ -80,6 +102,48 @@
 
         var color = d3.scale.category10();
 
+        var swarmColors = [];
+        for (var i = 0; i < 11; i++){
+            swarmColors.push(color(i));
+        }
+
+        function padToTwo(numberString) {
+            if (numberString.length < 2) {
+                numberString = '0' + numberString;
+            }
+            return numberString;
+        }
+
+        function hexAverage(colorArray) {
+            return colorArray.reduce(function (previousValue, currentValue) {
+                return currentValue
+                    .replace(/^#/, '')
+                    .match(/.{2}/g)
+                    .map(function (value, index) {
+                        return previousValue[index] + parseInt(value, 16);
+                    });
+            }, [0, 0, 0])
+            .reduce(function (previousValue, currentValue) {
+                return previousValue + padToTwo(Math.floor(currentValue / colorArray.length).toString(16));
+            }, '#');
+        }
+
+        function findSwarmColor(number){
+            var allColorsForNumber = [];
+            var colorToBeReturned = 'ffffff';
+            swarmList.forEach(function(item, index){
+                if (item.indexOf(number) !== -1){
+                    colorToBeReturned = swarmColors[index];
+                    allColorsForNumber.push(colorToBeReturned);
+                }
+            });
+            // if allColorsForNumber has values, get an average
+            if (allColorsForNumber.length > 0){
+                colorToBeReturned = hexAverage(allColorsForNumber);
+            }
+            return colorToBeReturned;
+        };
+
         var vis = d3.select("body")
                 .append("svg:svg")
                 .attr("width", w)
@@ -130,7 +194,9 @@
                         return "Node;" + d.id;
                     })
                     .attr("class", "nodeStrokeClass")
-                    .attr("fill", function(d) { return color(d.id); });
+                    // .attr("fill", function(d, index) { 
+                    //     return findSwarmColor(index); 
+                    // });
 
             nodeEnter.append("svg:text")
                     .attr("class", "textClass")
@@ -141,6 +207,13 @@
                     });
 
             node.exit().remove();
+
+            // update all colours:
+            var allDesigns = d3.selectAll("g.node")
+            allDesigns
+                .attr("fill", function(d, index) { 
+                        return findSwarmColor(index); 
+                    });
 
             force.on("tick", function () {
 
@@ -186,9 +259,22 @@
 
         // callback for the changes in the network
         $("#addNodes").on("click", function(){
-           graph.addLink(1, 6, '10');
+           // graph.addLink(1, 6, '10');
+           swarmList.push([7,25]);
            graph.addNode(x++);
-           graph.addLink(25, 6, '25');
+           graph.addLink(25, 7, '5');
+
+           swarmList.push([6,25]);
+           graph.addLink(25, 6, '5');
+
+           swarmList.push([6,19]);
+           graph.addLink(19, 6, '5');
+
+           swarmList.push([5,10]);
+           graph.addLink(5, 10, '5');
+
+           resetJSONLinks();
+
            keepNodesOnTop();
         });
     }
