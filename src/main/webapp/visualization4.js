@@ -1,6 +1,6 @@
    var graph;
    var json = {"nodes":[{"name":"one","group":1},{"name":"two","group":1},{"name":"three","group":1},{"name":"four","group":1},{"name":"five","group":1},{"name":"six","group":1},{"name":"seven","group":1},{"name":"eight","group":1},{"name":"nine","group":1},{"name":"ten","group":1},{"name":"eleven","group":2},{"name":"twelve","group":2},{"name":"thirteen","group":3},{"name":"fourteen","group":2},{"name":"fifteen","group":2},{"name":"sixteen","group":2},{"name":"seventeen","group":3},{"name":"eighteen","group":3},{"name":"nineteen","group":3},{"name":"twenty","group":3},{"name":"twenty-one","group":3},{"name":"twenty-two","group":3},{"name":"twenty-three","group":3},{"name":"twenty-four","group":3},{"name":"twenty-five","group":4}],
-                "links":[{"source":1,"target":0,"value":1},{"source":2,"target":0,"value":8},{"source":3,"target":0,"value":10},{"source":3,"target":2,"value":6},{"source":4,"target":0,"value":1},{"source":5,"target":0,"value":1},{"source":6,"target":0,"value":1},{"source":7,"target":0,"value":1},{"source":8,"target":0,"value":2},{"source":6,"target":1,"value":4},{"source":24,"target":0,"value":2},{"source":19,"target":16,"value":10},{"source":23,"target":19,"value":1}]};
+                "links":[{"source":1,"target":0,"value":2},{"source":2,"target":0,"value":12},{"source":3,"target":0,"value":12},{"source":3,"target":12,"value":12},{"source":4,"target":0,"value":12},{"source":5,"target":0,"value":12},{"source":6,"target":0,"value":12},{"source":7,"target":0,"value":12},{"source":8,"target":0,"value":12},{"source":6,"target":12,"value":4},{"source":24,"target":0,"value":2},{"source":19,"target":16,"value":10},{"source":23,"target":19,"value":1},{"source":17,"target":3,"value":1}]};
 
 
     function myGraph() {
@@ -55,13 +55,13 @@
         };
 
         this.addLink = function (source, target, value) {
-            console.log(source,target,value);
             links.push({"source": findNode(source), "target": findNode(target), "value": value});
             update();
         };
 
         var findNode = function (id) {
             for (var i in nodes) {
+                // find node by index
                 if (parseInt(i) === id) return nodes[i];
             };
         };
@@ -75,8 +75,8 @@
         };
 
         // set up the D3 visualisation in the specified element
-        var w = 960,
-            h = 450;
+        var w = 1800,
+            h = 1000;
 
         var color = d3.scale.category10();
 
@@ -125,7 +125,7 @@
                     .call(force.drag);
 
             nodeEnter.append("svg:circle")
-                    .attr("r", 12)
+                    .attr("r", 22)
                     .attr("id", function (d) {
                         return "Node;" + d.id;
                     })
@@ -164,19 +164,19 @@
 
             // Restart force layout.
             force
-                    .gravity(.001)
-                    .charge(-100)
-                    .friction(0)
-                    .linkDistance( function(d) { return d.value * 20 } )
-                    .size([w, h])
-                    .start();
+                .gravity(.005)
+                .charge(-100)
+                .friction(0.6)
+                .linkDistance( function(d) { return d.value * 20 } )
+                .size([w, h])
+                .start();
         };
 
 
         // Make it start
         update();
     }
-
+    x = 0;
     function drawGraph() {
 
         graph = new myGraph("#graph");
@@ -185,12 +185,12 @@
         keepNodesOnTop();
 
         // callback for the changes in the network
-        // var step = -1;
-        // function nextval()
-        // {
-        //     step++;
-        //     return 2000 + (1500*step); // initial time, wait time
-        // }
+        $("#addNodes").on("click", function(){
+           graph.addLink(1, 6, '10');
+           graph.addNode(x++);
+           graph.addLink(25, 6, '25');
+           keepNodesOnTop();
+        });
     }
 
     drawGraph();
