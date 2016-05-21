@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
+
 @RestController
 public class Controller {
 
@@ -19,8 +21,13 @@ public class Controller {
     @Autowired
     private WebSocket webSocket;
 
+    @Autowired
+    private DesignCollection designCollection;
+
     @RequestMapping(value = "/postDesign",method = RequestMethod.POST)
     public ResponseEntity postDesign(@RequestBody Data data)  {
+        designCollection.add(data.designId,data.imageURL,data.isLike,data.tags);
+
         userCollection.addUser(data.userId, data.designId, data.isLike);
         swarmManager.add(userCollection.getUser(data.userId), data.designId, data.isLike);
 
@@ -33,5 +40,10 @@ public class Controller {
         }
 
         return ResponseEntity.ok().build();
+    }
+
+    @RequestMapping(value = "/getDesigns",method = RequestMethod.GET)
+    public ResponseEntity<Collection<DesignData>> getDesigns()  {
+        return ResponseEntity.ok(designCollection.get());
     }
 }
