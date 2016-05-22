@@ -4,6 +4,8 @@
     <title>Force diagram for Swarm representation</title>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/sockjs/1.0.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
     <style>
         .link {
             stroke: #2E2E2E;
@@ -25,8 +27,11 @@
 </head>
 <body>
 <button id="addNodes">Add design to swarm</button>
-<script src = "visualization4.js">
- 
-</script>
+<script src = "scripts/hexAverage.js"></script>
+<script src = "scripts/findSwarmColor.js"></script>
+<script src = "scripts/drawGraph.js"></script>
+<script src = "scripts/resetJSONLinks.js"></script>
+<script src = "scripts/updateGraph.js"></script>
+<script src = "scripts/visualization4.js"></script>
 </body>
 </html>
