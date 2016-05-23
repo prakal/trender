@@ -1,8 +1,8 @@
 function findSwarmColor(number, swarmList){
-    var color = d3.scale.category10();
+    var color = d3.scale.category20();
 
     var swarmColors = [];
-    for (var i = 0; i < 11; i++){
+    for (var i = 0; i < swarmList.length; i++){
         swarmColors.push(color(i));
     }
 

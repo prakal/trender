@@ -10,7 +10,7 @@ function drawGraph(myGraph, json, keepNodesOnTop,swarmList, resetJSONLinks) {
        graph.addNode(len++);
        // make random connection to newly added node x
        swarmList.push([6,len-1]);
-       resetJSONLinks(json, swarmList, graph);
+       resetJSONLinks(json, swarmList[swarmList.length-1], graph);
 
        // swarmList.push([6,25]);
        // graph.addLink(25, 6, '5');
