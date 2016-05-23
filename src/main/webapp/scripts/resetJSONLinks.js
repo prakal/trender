@@ -5,7 +5,7 @@ function resetJSONLinks(json, swarmListLast, graph){
         swarmListLast.forEach(function(innerElement){
             if (item !== innerElement){
                 // source, target, value
-                graph.addLink(item, innerElement, 5);
+                graph.addLink(item, innerElement, 10);
             }
         });
     });
