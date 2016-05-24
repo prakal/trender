@@ -39,7 +39,7 @@ var update = function (vis, links, nodes, force, w, h, findSwarmColor, swarmList
 
     nodeEnter.append("svg:text")
             .attr("class", "textClass")
-            .attr("x", 14)
+            .attr("x", 26)
             .attr("y", ".31em")
             .text(function (d) {
                 return d.id;
@@ -63,22 +63,22 @@ var update = function (vis, links, nodes, force, w, h, findSwarmColor, swarmList
         link.attr("x1", function (d) {
             return d.source.x;
         })
-                .attr("y1", function (d) {
-                    return d.source.y;
-                })
-                .attr("x2", function (d) {
-                    return d.target.x;
-                })
-                .attr("y2", function (d) {
-                    return d.target.y;
-                });
+            .attr("y1", function (d) {
+                return d.source.y;
+            })
+            .attr("x2", function (d) {
+                return d.target.x;
+            })
+            .attr("y2", function (d) {
+                return d.target.y;
+            });
     });
 
     // Restart force layout.
     force
-        .gravity(.005)
+        .gravity(.007)
         .charge(-100)
-        .friction(0.6)
+        .friction(0.9)
         .linkDistance( function(d) { return d.value * 20 } )
         .size([w, h])
         .start();

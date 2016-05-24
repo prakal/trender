@@ -17,18 +17,18 @@ function drawGraph(myGraph, json, keepNodesOnTop,swarmList, resetJSONLinks) {
         while (randomNode1 == randomNode2){
           randomNode2 = Math.floor(Math.random() * swarmList.length);
         }
-        console.log(randomNode1,randomNode2, json.nodes.length);
+        // console.log(randomNode1,randomNode2, json.nodes.length);
         swarmList.push([randomNode1,randomNode2]);
         resetJSONLinks(json, swarmList[swarmList.length-1], graph);
       }
 
       function changeRandomLink(){
         var randomSwarm = Math.floor(Math.random() * swarmList.length);
-        var randomTimes = 1 + Math.floor(Math.random() * 6);
+        var randomTimes = 1 + Math.floor(Math.random() * 1.5);
         console.log(randomSwarm, swarmList[randomSwarm], randomTimes);
         for (var i = 0; i < randomTimes; i++){
           var randomNode1 = Math.floor(Math.random() * json.nodes.length);
-          console.log('randomNode1', randomNode1);
+          // console.log('randomNode1', randomNode1);
           if (swarmList[randomSwarm].indexOf(randomNode1) === -1){
             swarmList[randomSwarm].push(randomNode1);
           }
@@ -40,16 +40,9 @@ function drawGraph(myGraph, json, keepNodesOnTop,swarmList, resetJSONLinks) {
        // graph.addNode(len++);
        // make random connection to newly added node x
        // swarmList.push([6,len-1]);
-       setTimedInterval(addRandomLink, 3000, 10000);
-       setTimedInterval(changeRandomLink, 4000, 10000);
+       setTimedInterval(addRandomLink, 1500, 10000);
+       setTimedInterval(changeRandomLink, 2000, 10000);
 
-       // swarmList.push([6,25]);
-       // graph.addLink(25, 6, '5');
-
-       // swarmList.push([5,10]);
-       // graph.addLink(5, 10, '5');
-
-       // swarmList.push([6,24, 18, 21, 19]);
        keepNodesOnTop();
     });
 }

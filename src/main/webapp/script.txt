@@ -1,0 +1,16 @@
+- welcome to the future of design selections, Trender!
+- what is swarm intelligence, anyway?
+- it is a method of understanding user adoption patterns, and what drives them
+- according to the predictive market theory, 
+	- we can make astute bets on what designs will be popular in the future
+- Trender lets you observe swarms of designs and trends over time,
+- This is live, and it takes in user input of design liked/disliked, 
+	- runs the flocking algorithm on it, and assigns it to a particular swarm
+	- based on similar tags
+- visually, we have two stunning interfaces,
+	- an iOS frontend that lets users like/dislike a particular design
+	- a web-view modal of a force-layout chart that lets you *interact* with individual designs
+- Predictive markets are the future, no pun intended, and:
+	- They will let the group consensus of designers lead the way to discover trending designs
+- So, when in doubt, observe the trend!
+- Trender!
