@@ -52,7 +52,7 @@ function drawGraph(myGraph, json, keepNodesOnTop,swarmList, resetJSONLinks) {
        keepNodesOnTop();
     });
 
-    var socket = new SockJS('http://localhost:8080/trender');
+    var socket = new SockJS('/trender');
     var stompClient = Stomp.over(socket);
     stompClient.connect({}, function(frame) {
         console.log('Connected: ' + frame);
