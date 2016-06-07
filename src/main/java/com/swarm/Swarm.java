@@ -1,7 +1,10 @@
 package com.swarm;
 
+import lombok.Getter;
+
 import java.util.HashMap;
 
+@Getter
 public class Swarm {
     String swarmId;
     HashMap<String, Design> designs = new HashMap<String, Design>();
